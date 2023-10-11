@@ -9,7 +9,8 @@ def pz2(number):
             if len(str(number)) == 2:
                 first = number // 10
                 second = number % 10
-                print('Программа завершена, вот ваше число после перестановки цифр: ',second, first, sep='')
+                number = str(second)+str(first)
+                print('Программа завершена, вот ваше число после перестановки цифр: ',number)
             else:
                 print('Введены некорректные данные!')
                 pz2(input('Введите двузначное число: '))
@@ -19,8 +20,9 @@ def pz2(number):
         #Проверка на двузначность
             if len(str(num)) == 2:
                 first = num // 10
-                second =num % 10
-                print('Программа завершена, вот ваше число после перестановки цифр: -',second, first, sep='')
+                second = num % 10
+                number = str(second) + str(first)
+                print('Программа завершена, вот ваше число после перестановки цифр: -',number)
             else:
                 print('Введены некорректные данные!')
                 pz2(input('Введите двузначное число: '))
