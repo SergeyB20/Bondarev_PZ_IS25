@@ -2,9 +2,6 @@
 
 def pz2(number):
     try:
-        number = int(number)
-
-
         #Проверка на отрицательность
         if number > 0:
             #Проверка на двузначность
