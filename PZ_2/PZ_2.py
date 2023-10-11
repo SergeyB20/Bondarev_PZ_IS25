@@ -3,9 +3,9 @@
 def pz2(number):
     try:
         number = int(number)
-        #Проверка на отрицательность
+        # Проверка на отрицательность
         if number > 0:
-            #Проверка на двузначность
+            # Проверка на двузначность
             if len(str(number)) == 2:
                 first = number // 10
                 second = number % 10
@@ -16,7 +16,7 @@ def pz2(number):
 
         else:
             num = number * -1
-        #Проверка на двузначность
+        # Проверка на двузначность
             if len(str(num)) == 2:
                 first = num // 10
                 second = num % 10
