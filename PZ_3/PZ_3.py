@@ -8,7 +8,6 @@ def first():
         else:
             print('Введено нечетное число!')
 
-
     except:
         print('Введены некорректные данные!')
         first()
