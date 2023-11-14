@@ -6,8 +6,10 @@ def first_task():
     try:
         first = int(input('Введите любое целое число A: '))
         second = int(input('Введите любое целое число, которое больше A: '))
+        #Ввод счётчика
         if first < second:
             counter = 0
+            #Вывод чисел и подсчёт их количества
             while first < second-1:
                 second -= 1
                 counter += 1

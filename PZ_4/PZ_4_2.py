@@ -3,7 +3,7 @@
 
 
 def second_task():
-    list = []
+    numbers = []
     end = False
     try:
         number = int(input('Введите любое целое число N, которое больше 0: '))
@@ -11,18 +11,20 @@ def second_task():
             div = 10
             first = 1
             ost = number % 10
-            list.append(ost)
+            numbers.append(ost)
+            #Поиск каждого числа отдельно
             while first != 0:
                 first = number // div
                 div = div * 10
                 ost = first % 10
-                list.append(ost)
-            for i in list:
+                numbers.append(ost)
+            #Проверка на четность
+            for i in numbers:
                 if i % 2 != 0:
                     end = True
-                    print(end)
+                    print(end, '- В вашем числе присутствуют нечетные числа!')
                     exit()
-            print(end)
+            print(end, '- В вашем числе отсутствуют нечетные числа!')
 
         else:
             print('Введены некорректные данные')
