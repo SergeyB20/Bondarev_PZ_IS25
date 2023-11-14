@@ -10,6 +10,7 @@ def first_task():
         if first < second:
             counter = 0
             #Вывод чисел и подсчёт их количества
+            print('Числа между вашими значениями: /')
             while first < second-1:
                 second -= 1
                 counter += 1
