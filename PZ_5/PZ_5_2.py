@@ -10,7 +10,7 @@ numbers = [5,3,4,2]
 
 def Mean(X,Y):
     print('Среднее арифметическое: ', ((X + Y) / 2))
-    print('Среднее геометрическое: ', (sqrt(X * Y)),'\n')
+    print('Среднее геометрическое: ', (Y/(X*Y)),'\n')
 
 Mean(numbers[0],numbers[1])
 Mean(numbers[0], numbers[2])
