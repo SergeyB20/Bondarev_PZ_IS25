@@ -7,22 +7,11 @@ AMean = (X+Y)/2 и среднее геометрическое GMean = y/X Y д�
 from math import sqrt
 
 numbers = [5,3,4,2]
-def AB():
-    print('Результаты для A,B')
-    Mean(numbers[0],numbers[2])
-
-def AC():
-    print('\nРезультаты для A,C')
-    Mean(numbers[0], numbers[1])
-
-def AD():
-    print('\nРезультаты для A,D')
-    Mean(numbers[0], numbers[3])
 
 def Mean(X,Y):
     print('Среднее арифметическое: ', ((X + Y) / 2))
-    print('Среднее геометрическое: ', (sqrt(X * Y)))
+    print('Среднее геометрическое: ', (sqrt(X * Y)),'\n')
 
-AB()
-AC()
-AD()
+Mean(numbers[0],numbers[1])
+Mean(numbers[0], numbers[2])
+Mean(numbers[0], numbers[3])
