@@ -3,7 +3,7 @@
 двойки от первой до 10-й: 2, 4, 8,16, ... .
 """
 
-def spet():
+def degre():
     two = []
     degree = 1
     for i in range(11):
@@ -11,6 +11,7 @@ def spet():
         degree += 1
     print(two)
 
-spet()
+
+degre()
 
 
