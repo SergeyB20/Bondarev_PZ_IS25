@@ -9,7 +9,7 @@ def degre():
     for i in range(11):
         two.append(2**degree)
         degree += 1
-    print(two)
+    print('Два в степени от 1 до 10: ',two)
 
 
 degre()
