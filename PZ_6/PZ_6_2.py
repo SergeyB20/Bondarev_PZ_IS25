@@ -16,6 +16,7 @@ def task6():
                 nums_rev.append(numbers.index(numbers[number]))
 
     except:
+        print(numbers)
         print('Номера чисел: ', nums_rev[::-1] ,'\nКоличество элементов, соответсвующее условиям: ', len(nums_rev))
 
 
