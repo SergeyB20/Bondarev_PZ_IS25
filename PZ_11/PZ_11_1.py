@@ -35,5 +35,5 @@ with open('res.txt', 'w+') as res:
     res.write(f'{str(three)}\n')
     res.write(f'{str(four)}\n')
 
-with open('itog.txt', 'r+') as itog:
-    print(itog.read())
+with open('res.txt', 'r+') as res:
+    print(res.read())
