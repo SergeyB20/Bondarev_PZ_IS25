@@ -5,15 +5,13 @@
 import re
 from collections import OrderedDict
 
-with open('writer.txt', 'r', encoding='utf-8') as file:
+with open('PZ_14\writer.txt', 'r', encoding='utf-8') as file:
     data = file.read()
 
-author = re.findall(r'(.+[)])|(«(.* ?)»)', data)
-
+author = re.findall(r'(.+[)])|«(.* ?)', data)
+print(type(author))
 result = [[x for x in y if x!=""] for y in author]
-print(result)
 
-# author = OrderedDict.fromkeys(author)
-#
-# for item1 in author:
-#     print('\n',item1)
+for i in result:
+
+    print(i)
