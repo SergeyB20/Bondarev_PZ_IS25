@@ -12,6 +12,9 @@ with sq.connect('saper.db') as con:
     old INTEGER,
     score INTEGER
     )""")
+
+with sq.connect('saper.db') as con:
+    cur = con.cursor()
     cur.executemany("INSERT INTO users VALUES (?, ?, ?, ?, ?)", info_users)
     cur.execute("SELECT * FROM users")
     result = cur.fetchall()
