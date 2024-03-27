@@ -3,15 +3,18 @@
 файле."""
 
 import re
-from collections import OrderedDict
 
-with open('PZ_14\writer.txt', 'r', encoding='utf-8') as file:
+
+with open('writer.txt', 'r', encoding='utf-8') as file:
     data = file.read()
 
-author = re.findall(r'(.+[)])|«(.* ?)', data)
-print(type(author))
-result = [[x for x in y if x!=""] for y in author]
+author = re.findall(r'(.+[)])|([«][^»]+)', data)
 
-for i in result:
+ag = re.findall(r'(?<=[«])[^»]+', data)
 
+author = [[x for x in y if x!=""] for y in author]
+
+for i in author:
     print(i)
+
+print('Общее количество произведений -',len(ag))
