@@ -1,9 +1,3 @@
-#Вариант 13. Приложение ТОВАРНЫЙ ЗАПАС для автоматизированного
-#учёта товарных запасов на складе. БД должна содержать
-#таблицу Товары со следующей структурой записи: Код
-#товара, Торговая марка, Тип, Цена, Количество на складе,
-#Минимальный запас
-
 # Приложение АБИТУРИЕНТ для автоматизации работы приемной комиссии,
 # которая обеспечивает обработку анкетных данных абитуриентов. Таблица Анкета
 # содержит следующие данные об абитуриентах: Регистрационный номер, Фамилия, Имя,
@@ -11,11 +5,12 @@
 # выбранная Специальность.
 
 import sqlite3 as sq
-from info_zapas import info_items
-with sq.connect('zapas.db') as con:
+from abityr import info_students
+
+with sq.connect('abityrient.db') as con:
     cur=con.cursor()
-    cur.execute("DROP TABLE IF EXISTS items")
-    cur.execute("CREATE TABLE IF NOT EXISTS items("
+    cur.execute("DROP TABLE IF EXISTS students")
+    cur.execute("CREATE TABLE IF NOT EXISTS students("
                 "reg_n INTEGER PRIMARY KEY AUTOINCREMENT,"
                 "second_name TEXT NOT NULL,"
                 "first_name TEXT NOT NULL,"
@@ -24,58 +19,58 @@ with sq.connect('zapas.db') as con:
                 "achiv BOOLEAN NOT NULL,"
                 "address TEXT NOT NULL,"
                 "spec TEXT NOT NULL)")
-with sq.connect('zapas.db') as con:
+with sq.connect('abityrient.db') as con:
     cur=con.cursor()
-    cur.executemany("INSERT INTO items VALUES(?,?,?,?,?,?,?,?)", info_items)
-with sq.connect('zapas.db') as con:
+    cur.executemany("INSERT INTO students VALUES(?,?,?,?,?,?,?,?)", info_students)
+with sq.connect('abityrient.db') as con:
     cur = con.cursor()
-    cur.execute("SELECT * FROM items WHERE address=='г.Ростов-на-Дону'")
+    cur.execute("SELECT * FROM students WHERE address=='г.Ростов-на-Дону'")
     result_1 = cur.fetchall()
     print(result_1)
-with sq.connect('zapas.db') as con:
+with sq.connect('abityrient.db') as con:
     cur = con.cursor()
-    cur.execute("SELECT * FROM items WHERE second_name LIKE 'Б%'")
+    cur.execute("SELECT * FROM students WHERE second_name LIKE 'Б%'")
     result_2 = cur.fetchall()
     print(result_2)
-with sq.connect('zapas.db') as con:
+with sq.connect('abityrient.db') as con:
     cur = con.cursor()
-    cur.execute("SELECT brand,price FROM items WHERE price<quantity")
+    cur.execute("SELECT * FROM students WHERE achiv=FALSE")
     result_3 = cur.fetchall()
     print(result_3)
-# with sq.connect('zapas.db') as con:
-#     cur = con.cursor()
-#     cur.execute("UPDATE items SET price=price+25 WHERE price<1000")
-#     cur.execute("SELECT * FROM items")
-#     result_4=cur.fetchall()
-#     print(f"\n{result_4}")
-# with sq.connect('zapas.db') as con:
-#     cur = con.cursor()
-#     cur.execute("UPDATE items SET brand='Квас для вас' WHERE item_id=1")
-#     cur.execute("SELECT * FROM items WHERE item_id=1")
-#     result_5=cur.fetchall()
-#     print(result_5)
-# with sq.connect('zapas.db') as con:
-#     cur = con.cursor()
-#     cur.execute("UPDATE items SET item_type='лягушка' WHERE price<1000 AND (min_zapas<1000 OR quantity>600)")
-#     cur.execute("SELECT * FROM items WHERE item_type='лягушка'")
-#     result_6=cur.fetchall()
-#     print(result_6)
-# with sq.connect('zapas.db') as con:
-#     cur = con.cursor()
-#     cur.execute("DELETE FROM items WHERE item_id%2==0")
-#     cur.execute("SELECT * FROM items")
-#     result_7=cur.fetchall()
-#     print(f"\n{result_7}")
-# with sq.connect('zapas.db') as con:
-#     cur = con.cursor()
-#     cur.execute("DELETE FROM items WHERE item_type LIKE 'т%'")
-#     cur.execute("SELECT * FROM items")
-#     result_8=cur.fetchall()
-#     print(result_8)
-# with sq.connect('zapas.db') as con:
-#     cur = con.cursor()
-#     cur.execute("DELETE FROM items WHERE price>1000")
-#     cur.execute("SELECT * FROM items")
-#     result_9=cur.fetchall()
-#     print(result_9)
+with sq.connect('abityrient.db') as con:
+    cur = con.cursor()
+    cur.execute("UPDATE students SET achiv=TRUE WHERE achiv==False")
+    cur.execute("SELECT * FROM students")
+    result_4=cur.fetchall()
+    print(result_4)
+with sq.connect('abityrient.db') as con:
+    cur = con.cursor()
+    cur.execute("UPDATE students SET address='г.Ростов-на-Дону' WHERE address!='г.Ростов-на-Дону'")
+    cur.execute("SELECT * FROM students")
+    result_5=cur.fetchall()
+    print(result_5)
+with sq.connect('abityrient.db') as con:
+    cur = con.cursor()
+    cur.execute("UPDATE students SET spec='Программист' WHERE achiv==TRUE AND address=='г.Аксай' ")
+    cur.execute("SELECT * FROM students WHERE spec='Программист'")
+    result_6=cur.fetchall()
+    print(result_6)
+with sq.connect('abityrient.db') as con:
+    cur = con.cursor()
+    cur.execute("DELETE FROM students WHERE spec=='Программист'")
+    cur.execute("SELECT * FROM students")
+    result_7=cur.fetchall()
+    print(result_7)
+with sq.connect('abityrient.db') as con:
+    cur = con.cursor()
+    cur.execute("DELETE FROM students WHERE spec LIKE 'Б%'")
+    cur.execute("SELECT * FROM students")
+    result_8=cur.fetchall()
+    print(result_8)
+with sq.connect('abityrient.db') as con:
+    cur = con.cursor()
+    cur.execute("DELETE FROM students WHERE achiv==TRUE")
+    cur.execute("SELECT * FROM students")
+    result_9=cur.fetchall()
+    print(result_9)
 
