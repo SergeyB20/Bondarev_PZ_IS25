@@ -22,11 +22,13 @@ with sq.connect('abityrient.db') as con:
 with sq.connect('abityrient.db') as con:
     cur=con.cursor()
     cur.executemany("INSERT INTO students VALUES(?,?,?,?,?,?,?,?)", info_students)
+
 with sq.connect('abityrient.db') as con:
     cur = con.cursor()
     cur.execute("SELECT * FROM students WHERE address=='г.Ростов-на-Дону'")
     result_1 = cur.fetchall()
     print(result_1)
+
 with sq.connect('abityrient.db') as con:
     cur = con.cursor()
     cur.execute("SELECT * FROM students WHERE second_name LIKE 'Б%'")
@@ -67,10 +69,10 @@ with sq.connect('abityrient.db') as con:
     cur.execute("SELECT * FROM students")
     result_8=cur.fetchall()
     print(result_8)
-with sq.connect('abityrient.db') as con:
-    cur = con.cursor()
-    cur.execute("DELETE FROM students WHERE achiv==TRUE")
-    cur.execute("SELECT * FROM students")
-    result_9=cur.fetchall()
-    print(result_9)
+# with sq.connect('abityrient.db') as con:
+#     cur = con.cursor()
+#     cur.execute("DELETE FROM students WHERE achiv==TRUE")
+#     cur.execute("SELECT * FROM students")
+#     result_9=cur.fetchall()
+#     print(result_9)
 
