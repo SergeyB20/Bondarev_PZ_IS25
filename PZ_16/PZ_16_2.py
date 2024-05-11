@@ -13,7 +13,7 @@ class human:
 class man(human):
     def __init__(self, name, age, sex):
         super().__init__(name, age, sex)
-        self.sex = sex
+
 
 class woman(human):
     def __init__(self, name, age, sex):
