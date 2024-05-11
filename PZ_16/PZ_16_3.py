@@ -30,14 +30,13 @@ def save_def(stud, file):
 
 def load_def(file):
     with open(file, 'rb') as f:
-        they_bank = pickle.load(f)
-    return they_bank
+        studen = pickle.load(f)
+    return studen
 
 Bondarev = student('Сергей', 'Бондарев', [2, 1, 2, 3, 4, 5, 4])
 
 save_def(Bondarev, 'students.pkl')
 students = load_def('students.pkl')
 
-for i in students:
-    print(students.ave_marks(students.marks))
-    print('Student is otlichnik -', students.respect(students.ave_marks(students.marks)))
+print(students.ave_marks(students.marks))
+print('Student is otlichnik -', students.respect(students.ave_marks(students.marks)))
