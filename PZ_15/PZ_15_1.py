@@ -23,22 +23,22 @@ with sq.connect('abityrient.db') as con:
     cur=con.cursor()
     cur.executemany("INSERT INTO students VALUES(?,?,?,?,?,?,?,?)", info_students)
 
-with sq.connect('abityrient.db') as con:
-    cur = con.cursor()
-    cur.execute("SELECT * FROM students WHERE address=='г.Ростов-на-Дону'")
-    result_1 = cur.fetchall()
-    print(result_1)
-
-with sq.connect('abityrient.db') as con:
-    cur = con.cursor()
-    cur.execute("SELECT * FROM students WHERE second_name LIKE 'Б%'")
-    result_2 = cur.fetchall()
-    print(result_2)
-with sq.connect('abityrient.db') as con:
-    cur = con.cursor()
-    cur.execute("SELECT * FROM students WHERE achiv=FALSE")
-    result_3 = cur.fetchall()
-    print(result_3)
+# with sq.connect('abityrient.db') as con:
+#     cur = con.cursor()
+#     cur.execute("SELECT * FROM students WHERE address=='г.Ростов-на-Дону'")
+#     result_1 = cur.fetchall()
+#     print(result_1)
+#
+# with sq.connect('abityrient.db') as con:
+#     cur = con.cursor()
+#     cur.execute("SELECT * FROM students WHERE second_name LIKE 'Б%'")
+#     result_2 = cur.fetchall()
+#     print(result_2)
+# # with sq.connect('abityrient.db') as con:
+# #     cur = con.cursor()
+# #     cur.execute("SELECT * FROM students WHERE achiv=FALSE")
+# #     result_3 = cur.fetchall()
+# #     print(result_3)
 with sq.connect('abityrient.db') as con:
     cur = con.cursor()
     cur.execute("UPDATE students SET achiv=TRUE WHERE achiv==False")
@@ -57,22 +57,22 @@ with sq.connect('abityrient.db') as con:
     cur.execute("SELECT * FROM students WHERE spec='Программист'")
     result_6=cur.fetchall()
     print(result_6)
-with sq.connect('abityrient.db') as con:
-    cur = con.cursor()
-    cur.execute("DELETE FROM students WHERE spec=='Программист'")
-    cur.execute("SELECT * FROM students")
-    result_7=cur.fetchall()
-    print(result_7)
-with sq.connect('abityrient.db') as con:
-    cur = con.cursor()
-    cur.execute("DELETE FROM students WHERE spec LIKE 'Б%'")
-    cur.execute("SELECT * FROM students")
-    result_8=cur.fetchall()
-    print(result_8)
 # with sq.connect('abityrient.db') as con:
 #     cur = con.cursor()
-#     cur.execute("DELETE FROM students WHERE achiv==TRUE")
+#     cur.execute("DELETE FROM students WHERE spec=='Программист'")
 #     cur.execute("SELECT * FROM students")
-#     result_9=cur.fetchall()
-#     print(result_9)
-
+#     result_7=cur.fetchall()
+#     print(result_7)
+# with sq.connect('abityrient.db') as con:
+#     cur = con.cursor()
+#     cur.execute("DELETE FROM students WHERE spec LIKE 'Б%'")
+#     cur.execute("SELECT * FROM students")
+#     result_8=cur.fetchall()
+#     print(result_8)
+# # with sq.connect('abityrient.db') as con:
+# #     cur = con.cursor()
+# #     cur.execute("DELETE FROM students WHERE achiv==TRUE")
+# #     cur.execute("SELECT * FROM students")
+# #     result_9=cur.fetchall()
+# #     print(result_9)
+#
