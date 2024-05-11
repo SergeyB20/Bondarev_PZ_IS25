@@ -33,7 +33,7 @@ def load_def(file):
         they_bank = pickle.load(f)
     return they_bank
 
-Bondarev = student('Сергей', 'Бондарев', [2, 1, 2, 3, 4, 5, 3])
+Bondarev = student('Сергей', 'Бондарев', [2, 1, 2, 3, 4, 5, 4])
 
 save_def(Bondarev, 'students.pkl')
 students = load_def('students.pkl')

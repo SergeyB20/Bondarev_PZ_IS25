@@ -21,7 +21,7 @@ class woman(human):
 
 
 
-Bondarev = man('Сергей', '17', 'Мужчина')
+Bondarev = man('Сергей', '18', 'Мужчина')
 
 print(Bondarev.sex)
 
