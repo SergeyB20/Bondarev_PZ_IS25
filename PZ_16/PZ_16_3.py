@@ -23,9 +23,9 @@ class student:
         return st_is_otl
 
 
-def save_def(stud, file):
+def save_def(stude, file):
     with open(file, 'wb') as f:
-        pickle.dump(stud, f)
+        pickle.dump(stude, f)
 
 
 def load_def(file):
