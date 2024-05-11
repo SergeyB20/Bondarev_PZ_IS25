@@ -23,5 +23,5 @@ class woman(human):
 
 Bondarev = man('Сергей', '18', 'Мужчина')
 
-print(Bondarev.sex)
+print("Пол человека -", Bondarev.sex)
 

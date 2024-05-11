@@ -34,9 +34,13 @@ def load_def(file):
     return studen
 
 Bondarev = student('Сергей', 'Бондарев', [2, 1, 2, 3, 4, 5, 4])
+Korennoi = student('Никита', 'Коренной', [2, 1, 5, 3, 4, 5, 5])
+Borzistiy = student('Максим', 'Борзистый', [5, 5, 5, 5])
 
-save_def(Bondarev, 'students.pkl')
-students = load_def('students.pkl')
+students_info = [Bondarev,Borzistiy,Korennoi]
 
-print(students.ave_marks(students.marks))
-print('Student is otlichnik -', students.respect(students.ave_marks(students.marks)))
+for stud in students_info:
+    save_def(stud, 'students.pkl')
+    students = load_def('students.pkl')
+    print(students.ave_marks(students.marks))
+    print('Student is otlichnik -', students.respect(students.ave_marks(students.marks)))
