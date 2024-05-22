@@ -1,11 +1,8 @@
 import tkinter as tk
-from typing import List
 
-# Создать окно с интерфейсом
 root = tk.Tk()
 root.title("Персональная информация")
 
-# Создать разделы и барьеры
 personal_frame = tk.LabelFrame(root, text="Персональная информация")
 personal_frame.grid(row=0, column=0, padx=5, pady=5, sticky="nsew")
 contact_frame = tk.LabelFrame(root, text="Контактная информация")
@@ -14,7 +11,6 @@ preferences_frame = tk.LabelFrame(root, text="Выберите ваших люб
 preferences_frame.grid(row=2, column=0, padx=5, pady=5, sticky="nsew")
 
 
-# Создать элементы в разделе "Персональные данные"
 name_label = tk.Label(personal_frame, text="Имя:")
 name_label.grid(row=0, column=0)
 name_entry = tk.Entry(personal_frame)
@@ -32,7 +28,6 @@ email_entry.grid(row=2, column=1)
 
 
 
-# Создать элементы в разделе "Контактная информация"
 phone_label = tk.Label(contact_frame, text="Возврат:")
 phone_label.grid(row=0, column=0, sticky="w")
 phone_entry = tk.Entry(contact_frame)
@@ -52,7 +47,6 @@ phone_label1.grid(row=2, column=0, sticky="w")
 phone_entry = tk.Text(contact_frame, height=4, width=25)
 phone_entry.grid(row=3, column=0)
 
-# Создать элементы в разделе "Предпочтения"
 animals_frame = tk.Frame(preferences_frame)
 animals_frame.grid(row=0, column=0)
 zeb_check = tk.Checkbutton(animals_frame, text="Зебра")
@@ -74,9 +68,7 @@ hum_check.grid(row=0, column=3)
 crab_check.grid(row=1, column=3)
 
 
-# Создать кнопку "Отправить"
 submit_button = tk.Button(root, text="Отправить информацию")
 submit_button.grid(row=5, column=0, pady=1, sticky='w')
 
-# Запуск основного цикла
 root.mainloop()
