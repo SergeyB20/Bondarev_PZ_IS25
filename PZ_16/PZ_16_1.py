@@ -16,8 +16,7 @@ class student:
 
     @staticmethod
     def respect(average):
-        st_is_otl = average == 5
-        return st_is_otl
+        return average == 5
 
 
 Bondarev = student('Сергей', 'Бондарев', [2, 1, 2, 3, 4, 5, 3])
