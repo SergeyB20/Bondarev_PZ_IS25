@@ -9,7 +9,7 @@ except:
     pass
 
 # task 3
-os.rename('-*9-+69*/./PZ_6/1.txt', './test/1.txt')
+os.rename('./PZ_6/1.txt', './test/1.txt')
 os.rename('./PZ_6/2.txt', './test/2.txt')
 os.rename('./PZ_7/3.txt', './test/test1/4.txt')
 
