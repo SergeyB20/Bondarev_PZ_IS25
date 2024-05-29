@@ -24,7 +24,7 @@ path = min(path, key=len)
 
 print(os.path.basename(f'./PZ_11/{path}'))
 
-# task 6-*-
+# task 6
 
 os.startfile('Reports\Report_17.pdf')
 
