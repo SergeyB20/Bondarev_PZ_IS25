@@ -9,7 +9,7 @@ except:
     pass
 
 # task 3
-os.rename('./PZ_6/1.txt', './test/1.txt')
+os.rename('-*9-+69*/./PZ_6/1.txt', './test/1.txt')
 os.rename('./PZ_6/2.txt', './test/2.txt')
 os.rename('./PZ_7/3.txt', './test/test1/4.txt')
 
@@ -24,9 +24,9 @@ path = min(path, key=len)
 
 print(os.path.basename(f'./PZ_11/{path}'))
 
-# task 6
+# task 6-*-
 
-os.startfile('Reports\Report_2.pdf')
+os.startfile('Reports\Report_17.pdf')
 
 # task 7
 open('PZ_17/123.txt', 'w')
